@@ -245,7 +245,7 @@ CREATE TABLE customer_address (
 
 
 
--- Create sales_details table
+-- Create sales_details table (hahahaa PK not good)
 CREATE TABLE sales_details (
     sales_id SERIAL PRIMARY KEY,
     customer_id INT NOT NULL,
@@ -450,6 +450,7 @@ SELECT * FROM product_category;
 SELECT * FROM region;
 SELECT * FROM retail_sales;
 SELECT * FROM sales_details LIMIT 100;
+SELECT * FROM sales_details WHERE invoice_date = '2025-02-08';
 
 
 SELECT MIN(invoice_date), MAX(invoice_date) from sales_details;

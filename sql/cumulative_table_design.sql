@@ -453,9 +453,10 @@ AND customer_id = 970;
 
 -- Using CTE (common table expression) to unnest dataset to its original structure
 WITH unnested AS (
-    SELECT customer_no, UNNEST(sales_stats)::sales_stats AS sales_stats
+    SELECT customer_id, customer_no, UNNEST(sales_stats)::sales_stats AS sales_stats
     FROM cum_customer_sales
     WHERE current_year = 2024
 )
 SELECT customer_no, (sales_stats::sales_stats).*
-FROM unnested;
+FROM unnested
+WHERE customer_id = 970;
