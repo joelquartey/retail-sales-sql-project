@@ -1,3 +1,31 @@
+/*
+@author: Joel Quartey
+@date: Feb 8, 2025
+
+*/
+
+
+
+
+
+/*
+    Relational Database Modeling & Design
+    ----------------------------------------------------
+
+    We want to start off with our main source data we got from kaggle[https://www.kaggle.com/datasets/arnavsmayan/online-retail-sales-dataset]
+    We are going to create our database under a schema. We will then create our source table (retail_sales) and then load our data from kaggle into it.
+
+    *** Conceptual modeling using ER-diagrams is not covered in this project. ****
+
+    We will apply normalization (the process of organizing/structuring a database to reduce redundancy and to improve data consistency and integrity) up to
+    3NF (Third Normal Form). We will enforce foreign key constraints, check constraints as well as creating indexes to speed up query execution.
+
+    We will also cover idempotency and modeling of slowly-changing dimensions..
+
+*/
+
+
+
 -- Create database
 CREATE DATABASE Shopping;
 

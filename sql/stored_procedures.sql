@@ -1,4 +1,12 @@
 /*
+@author: Joel Quartey
+@date: Feb 8, 2025
+
+*/
+
+
+
+/*
 
     Stored Procedures
     ----------------------------------
@@ -24,6 +32,7 @@ SET search_path TO schema_name, RetailSales;
 
 
 DROP PROCEDURE IF EXISTS sp_add_sales_transaction(INT, INT, INT, NUMERIC, NUMERIC, INT, INT, NUMERIC);
+
 
 
 

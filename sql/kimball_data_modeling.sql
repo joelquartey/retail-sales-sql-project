@@ -1,4 +1,11 @@
 /*
+@author: Joel Quartey
+@date: Feb 8, 2025
+
+*/
+
+
+/*
     Dimensional Data Modeling - Kimball Approach
     ----------------------------------------------------
     This approach to designing data warehouses was introduced by Ralph Kimball.
