@@ -1,42 +1,42 @@
 # Retail Sales and Customer Intelligence System
 
-The motivation for this project is to demonstrate and leverage on a variety of SQL techniques and concepts and as it applies to real life scenarios.
+The motivation for this project is to demonstrate and leverage on a variety of SQL techniques and concepts as it applies to real life scenarios.
 It leverages a technique in Data Engineering: ETL to set up a data infrastructure using pure SQL only.
 
 
 ## Project Overview:
 
-This project involves designing and implementation of a data warehouse system for a multinational corporation to analyze sales, customer behavior, and market trends across different regions. The system will be based on the Kimball Data Warehouse methodology, focusing on:
+This project involves designing and implementation of a data warehouse system for a fictitious multinational discount store operator in the global retail industry to analyze sales, customer behavior, and market trends across different regions. The system will be based on the Kimball Data Warehouse methodology, focusing on:
 
 - Sales Performance Tracking
 - Market Trend Analysis
-- Customer Segmentation
 
 
 
 :wrench: **SQL Concepts included in this project**
 
-- Relational Data Modeling
+- Relational Data Modeling for OLTP
 - Using DDL in database, schema and table creation
-- Modeling Slowly-changing Dimensions (SCDs)
-- Cumulative Dimensions using complex data types (Struct and Arrays)
+- Constraint Management
 - Data Exploration using DML Queries and JOINS
-- Dimensional Data Modeling (Kimball)
+- Modeling Slowly-changing Dimensions (SCDs)
 - Common Table Expressions (CTEs)
+- Cumulative Dimensions using complex data types (Struct and Arrays)
+- Dimensional Data Modeling (Kimball) for OLAP
 
-
-- Functions
+- Functions and Views
 - Stored Procedures
 - Triggers
-- Views
+- Transactions and Error Handling
 - Identity and Access Management using DCL: (GRANT, REVOKE, DENY)
+- Adherence to SQL Best Practices(naming conventions, documentations, clean code, etc.. )
 
 
 ## RDBMS 
 
 The main Relational Database Management System and client used for this project:
-- Postgres
-- DataGrip
+- [Postgres](https://www.postgresql.org/)
+- [DataGrip](https://www.jetbrains.com/datagrip/)
 
 
 ## Data Overview
@@ -48,7 +48,7 @@ The intent of the data infrastructure would be able to serve different data cons
 - Data analysts/Data scientist
 - Data Engineers
 - Machine Learning Models
-- Ordinary customer
+- Ordinary consumer (Company Execs)
 
 
 ## Data Sources:
