@@ -41,6 +41,10 @@ SET search_path TO schema_name, RetailSales;
  Note: that there are row-level and statement-level triggers in postgresql.
  - Row-level triggers are invoked once for each row affected by the event(INSERT, DELETE, UPDATE)
  - Statement-level triggers are invoked once per SQL statement, regardless of the number of rows affected.
+
+    Note:
+    ** The function below MUST have been created before creating this trigger **
+    ** You will find the function definition in the functions_n_views.sql file **
 */
 
 DROP TRIGGER IF EXISTS trg_date_of_transaction ON RetailSales.sales_details;
