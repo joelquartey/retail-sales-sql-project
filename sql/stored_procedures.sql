@@ -64,6 +64,10 @@ BEGIN
         We want to validate the amount to be paid by customer, supplied as argument to this stored procedure against actual discounted price.
         We do so by comparing the amount with the discount price returned by the UDF (User defined function) which is a scalar function:
 
+        Note:
+         ** The function below MUST have been created before creating this stored procedure **
+         ** You will find the function definition in the functions_n_views.sql file **
+
         fn_calc_discount_price(unit_price NUMERIC, discount NUMERIC)
     */
 
