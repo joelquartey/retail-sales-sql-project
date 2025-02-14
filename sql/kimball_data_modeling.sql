@@ -89,7 +89,7 @@ CREATE TABLE dim_date(
     day_of_month INT,
     day_of_week INT,
     day_name TEXT,
-    is_holiday BIT
+    is_holiday BOOL NOT NULL
 );
 
 

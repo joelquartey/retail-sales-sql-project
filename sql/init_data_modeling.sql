@@ -172,7 +172,7 @@ SELECT MIN(total_amount), MAX(total_amount), ROUND(AVG(total_amount), 4) AVG FRO
 CREATE TABLE payment_method (
     method_id SERIAL PRIMARY KEY,
     payment_method TEXT NOT NULL,
-    is_active SMALLINT DEFAULT 1
+    is_active BOOL NOT NULL DEFAULT 1
 );
 
 
@@ -266,7 +266,7 @@ CREATE TABLE customer_address (
     address_id INTEGER,
     start_date DATE,
     end_date DATE,
-    is_current SMALLINT DEFAULT 1
+    is_current BOOL DEFAULT 1
 );
 
 
