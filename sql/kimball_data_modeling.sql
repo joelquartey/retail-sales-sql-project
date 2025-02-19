@@ -83,12 +83,12 @@ CREATE TABLE dim_date(
     full_date DATE,
     year INT,
     quarter INT,
-    quarter_name TEXT,
+    quarter_name VARCHAR,
     month INT,
-    month_name TEXT,
+    month_name VARCHAR,
     day_of_month INT,
     day_of_week INT,
-    day_name TEXT,
+    day_name VARCHAR,
     is_holiday BOOL NOT NULL
 );
 
@@ -96,7 +96,7 @@ CREATE TABLE dim_date(
 -- Creating the product_category dimension (dim_product_category)
 CREATE TABLE dim_product_category(
     category_key INT PRIMARY KEY,
-    product_category TEXT
+    product_category VARCHAR
 );
 
 
@@ -104,7 +104,7 @@ CREATE TABLE dim_product_category(
 -- Creating the region dimension (dim_region)
 CREATE TABLE dim_region(
     region_key INT PRIMARY KEY,
-    region TEXT
+    region VARCHAR
 );
 
 
@@ -112,7 +112,7 @@ CREATE TABLE dim_region(
 -- Creating the payment_method dimension (dim_payment_method)
 CREATE TABLE dim_payment_method(
     payment_method_key INT PRIMARY KEY,
-    payment_method TEXT
+    payment_method VARCHAR
 );
 
 
@@ -120,11 +120,11 @@ CREATE TABLE dim_payment_method(
 -- Creating the customer dimension (dim_customer)
 CREATE TABLE dim_customer(
     customer_key INT PRIMARY KEY,
-    customer_no TEXT,
-    first_name TEXT,
-    last_name TEXT,
-    gender TEXT,
-    email TEXT
+    customer_no VARCHAR,
+    first_name VARCHAR,
+    last_name VARCHAR,
+    gender VARCHAR,
+    email VARCHAR
 
 );
 

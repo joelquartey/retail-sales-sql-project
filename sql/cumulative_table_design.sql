@@ -65,7 +65,7 @@ SET search_path TO schema_name, RetailSalesDW;
  */
 CREATE TABLE cum_product_sales(
     category_id INT,
-    product_category TEXT,
+    product_category VARCHAR,
     cumulative_quantity INT,
     cumulative_sales NUMERIC(18, 2),
     present_date DATE,
@@ -144,9 +144,9 @@ WHERE product_category='Electronics';
  */
 CREATE TABLE cum_region_product_sales(
     region_id INT,
-    region TEXT,
+    region VARCHAR,
     category_id INT,
-    product_category TEXT,
+    product_category VARCHAR,
     cumulative_sales NUMERIC(18, 2),
     current_year INT,
     PRIMARY KEY (region_id, category_id, current_year)
@@ -221,7 +221,7 @@ SELECT * FROM cum_region_product_sales WHERE product_category='Books';
 CREATE TABLE cum_customer_product_engage(
     customer_id INT,
     category_id INT,
-    product_category TEXT,
+    product_category VARCHAR,
     cum_purchase_count INT,
     cumulative_sales NUMERIC(18, 2),
     current_year INT,
@@ -368,7 +368,7 @@ CREATE TYPE sales_stats AS (
 */
 CREATE TABLE cum_customer_sales(
     customer_id INT,
-    customer_no TEXT,
+    customer_no VARCHAR,
     sales_stats sales_stats[],
     current_year INT,
     PRIMARY KEY (customer_id, current_year)

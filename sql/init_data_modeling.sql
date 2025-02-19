@@ -44,17 +44,17 @@ SET search_path TO schema_name, RetailSales;
 -- Create the base tables to import the main dataset into it
 CREATE TABLE retail_sales (
     transaction_id INT,
-    timestamp TEXT,
+    timestamp VARCHAR,
     customer_id INT,
     product_id INT,
-    product_category TEXT,
+    product_category VARCHAR,
     quantity INT,
     price NUMERIC(10, 2),
     discount NUMERIC(4, 2),
-    payment_method TEXT,
+    payment_method VARCHAR,
     customer_age INT,
-    customer_gender TEXT,
-    customer_location TEXT,
+    customer_gender VARCHAR,
+    customer_location VARCHAR,
     total_amount NUMERIC(10, 2)
 );
 
@@ -69,7 +69,7 @@ SELECT * FROM RetailSales.retail_sales LIMIT 100;
 
 -- create a base tables for fake_customer_names and fake_customer_address
 CREATE TABLE fake_customer_names (
-    customer_name TEXT
+    customer_name VARCHAR
 );
 
 -- import CSV dataset into postgresql using psql command
@@ -78,7 +78,7 @@ CREATE TABLE fake_customer_names (
 
 
 CREATE TABLE fake_customer_address (
-    customer_address TEXT
+    customer_address VARCHAR
 );
 
 -- import CSV dataset into postgresql using psql command
@@ -171,7 +171,7 @@ SELECT MIN(total_amount), MAX(total_amount), ROUND(AVG(total_amount), 4) AVG FRO
 -- Create payment_method table
 CREATE TABLE payment_method (
     method_id SERIAL PRIMARY KEY,
-    payment_method TEXT NOT NULL,
+    payment_method VARCHAR NOT NULL,
     is_active BOOL NOT NULL DEFAULT 1
 );
 
@@ -180,7 +180,7 @@ CREATE TABLE payment_method (
 -- Create product_category table
 CREATE TABLE product_category (
     category_id SERIAL PRIMARY KEY,
-    category TEXT
+    category VARCHAR
 );
 
 
@@ -189,16 +189,16 @@ CREATE TABLE product_category (
 -- Create region table
 CREATE TABLE region (
     region_id SERIAL PRIMARY KEY,
-    region_name TEXT
+    region_name VARCHAR
 );
 
 
 -- Create address table
 CREATE TABLE address (
     address_id SERIAL PRIMARY KEY,
-    street_number TEXT,
-    city TEXT,
-    zip_code TEXT
+    street_number VARCHAR,
+    city VARCHAR,
+    zip_code VARCHAR
 );
 
 
@@ -206,13 +206,13 @@ CREATE TABLE address (
 -- Create customer table
 CREATE TABLE customer (
     customer_id SERIAL PRIMARY KEY,
-    customer_no TEXT,
-    first_name TEXT,
-    last_name TEXT,
+    customer_no VARCHAR,
+    first_name VARCHAR,
+    last_name VARCHAR,
     gender CHAR,
-    email TEXT,
+    email VARCHAR,
     date_of_birth DATE,
-    phone_number TEXT
+    phone_number VARCHAR
 );
 
 
@@ -262,8 +262,8 @@ CREATE TABLE customer (
 */
 
 CREATE TABLE customer_address (
-    customer_id INTEGER,
-    address_id INTEGER,
+    customer_id INT,
+    address_id INT,
     start_date DATE,
     end_date DATE,
     is_current BOOL DEFAULT 1
@@ -277,14 +277,14 @@ CREATE TABLE customer_address (
 CREATE TABLE sales_details (
     sales_id SERIAL PRIMARY KEY,
     customer_id INT NOT NULL,
-    category_id SMALLINT NOT NULL,
+    category_id INT NOT NULL,
     unit_price NUMERIC(10, 2),
     quantity INT NOT NULL,
     discount NUMERIC(4, 2),
     amount NUMERIC(10, 2) NOT NULL,
-    payment_method_id SMALLINT NOT NULL,
+    payment_method_id INT NOT NULL,
     invoice_date DATE NOT NULL,
-    region_id SMALLINT NOT NULL
+    region_id INT NOT NULL
 );
 
 
