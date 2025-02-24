@@ -151,10 +151,19 @@ $$ LANGUAGE PLPGSQL;
 /*
     Views
     -------------------------
-    A view is a virtual table that comprise parts of one or more tables. Unlike traditional tables, a view does not store data on disk;
+    A view is a virtual table whose contents are defined by a query. Unlike traditional tables, a view does not store data on disk;
     instead, it dynamically retrieves data based on pre-defined query (like a "query store" ).
-
     SQL views are very useful for managing complex queries, enhancing security and also provides tailored data views for different users.
+
+
+    *** differences and when to use Views/CTEs/Subquery ***
+    -----------------------------------------------------------------------
+    - These three (Views/CTEs/subquery) store TRANSFORMATIONS not data.
+        * Query gets executed again anytime you call them
+    - CTEs are queries that begin with "WITH", and only exist in the context of a query
+    - Views are named queries that can be shared across.
+    - Subqueries are expensive and terrible, they should NEVER be used.
+
 
     - What we want to do with views is to create a virtual table on top of our operational tables as v_christmas_day_sales_by_payment_method
         This view will generate the total sales generated on christmas day (25th December) according to payment methods used by the customers
@@ -163,21 +172,19 @@ $$ LANGUAGE PLPGSQL;
 
 */
 
-
 CREATE VIEW v_christmas_day_sales_by_payment_methods AS
 
 WITH christmas_day_sales AS (
-
     SELECT * FROM RetailSales.sales_details
     WHERE invoice_date::text LIKE '%-12-25'
 )
 SELECT
     t2.region_name,
     t1.invoice_date AS christmas_day,
-    SUM(CASE WHEN t1.payment_method_id = 1 THEN t1.amount ELSE 0 END ) AS "Credit Card",
-    SUM(CASE WHEN t1.payment_method_id = 2 THEN t1.amount ELSE 0 END ) AS "Debit Card",
-    SUM(CASE WHEN t1.payment_method_id = 3 THEN t1.amount ELSE 0 END ) AS "Gift Card",
-    SUM(CASE WHEN t1.payment_method_id = 4 THEN t1.amount ELSE 0 END ) AS "Paypal"
+    SUM(CASE WHEN t1.payment_method_id = 1 THEN t1.amount ELSE 0 END ) AS Credit_Card,
+    SUM(CASE WHEN t1.payment_method_id = 2 THEN t1.amount ELSE 0 END ) AS Debit_Card,
+    SUM(CASE WHEN t1.payment_method_id = 3 THEN t1.amount ELSE 0 END ) AS Gift_Card,
+    SUM(CASE WHEN t1.payment_method_id = 4 THEN t1.amount ELSE 0 END ) AS Paypal
 
 FROM christmas_day_sales t1
 LEFT JOIN region t2 ON t1.region_id=t2.region_id

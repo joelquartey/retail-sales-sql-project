@@ -63,5 +63,12 @@ The dataset is a synthetic online retail sales data, featuring customer transact
 
 
 
+## Credits
 
+This project was inspired by the free 6-Week Data Engineering Bootcamp on youtube by Zack Wilson. My focus was on the first two weeks of the course where I learnt a lot of high-value techniques in dimensional data modeling. Special thanks to [Zack Wilson](https://github.com/EcZachly) for his immense contribution to the data engineering space.
+
+
+
+
+_You will find screenshots of some outputs under each of the concepts explained in the screenshots directory_
 
